@@ -3,7 +3,7 @@
 const startGame = () => {
   const createGame = () => {
     const secretNumber = Math.floor(Math.random() * 100) + 1;
-    const maxItems = 10;
+    let maxItems = 10;
     console.log(`[Отладка] Загадано число: ${secretNumber}`); // Для разработчика
 
     function askGuess() {
@@ -30,14 +30,16 @@ const startGame = () => {
       // проверка ввода на пустое значение
       if (input === "") {
         alert("Пожалуйста, введите значение перед продолжением!");
-        askGuess(); 
+        askGuess();
         return;
       }
 
       const guess = Number(input);
+      console.log("guess: ", guess);
+      console.log("guess: ", typeof guess);
 
-      // Проверка: ввел ли пользователь именно число
       if (isNaN(guess)) {
+        // Проверка: ввел ли пользователь именно число
         alert("Введи число!");
         // Рекурсивный вызов для повторного запроса
         askGuess();
