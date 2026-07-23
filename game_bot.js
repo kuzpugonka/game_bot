@@ -62,8 +62,6 @@ const startGame = () => {
 
     return askGuess;
   };
+  // Запуск игры
+  createGame();
 };
-
-// Запуск игры
-createGame();
-startGame();
