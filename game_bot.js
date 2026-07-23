@@ -17,7 +17,7 @@ const startGame = () => {
         return;
       }
 
-      const input = prompt("Угадай число от 1 до 100");
+      const input = prompt("Угадай число от 1 до 100. Осталось попыток: ${maxItems}");
 
       // Обработка нажатия "Отмена" (возвращает null)
       if (input === null) {
