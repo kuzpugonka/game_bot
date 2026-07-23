@@ -17,7 +17,7 @@ const startGame = () => {
         return;
       }
 
-      const input = prompt("Угадай число от 1 до 100. Осталось попыток: ${maxItems}");
+      const input = prompt(`Угадай число от 1 до 100. Осталось попыток: ${maxItems}`);
 
       // Обработка нажатия "Отмена" (возвращает null)
       if (input === null) {
@@ -37,10 +37,12 @@ const startGame = () => {
 
       // Логика сравнения
       if (guess > secretNumber) {
-        alert("Загаданное число меньше");
+        maxItems--;
+        alert(`Загаданное число меньше. Осталось попыток: ${maxItems}`);
         askGuess(); // Рекурсия
       } else if (guess < secretNumber) {
-        alert("Загаданное число больше");
+        maxItems--;
+        alert(`Загаданное число больше. Осталось попыток: ${maxItems}`);
         askGuess(); // Рекурсия
       } else {
         // Угадал
