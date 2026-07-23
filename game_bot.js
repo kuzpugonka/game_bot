@@ -27,6 +27,12 @@ const startGame = () => {
         location.reload(); // Перезагрузка страницы для полного сброса состояния
         return;
       }
+      // проверка ввода на пустое значение
+      if (input === "") {
+        alert("Пожалуйста, введите значение перед продолжением!");
+        askGuess(); 
+        return;
+      }
 
       const guess = Number(input);
 
