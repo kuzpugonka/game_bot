@@ -17,7 +17,9 @@ const startGame = () => {
         return;
       }
 
-      const input = prompt(`Угадай число от 1 до 100. Осталось попыток: ${maxItems}`);
+      const input = prompt(
+        `Угадай число от 1 до 100. Осталось попыток: ${maxItems}`,
+      );
 
       // Обработка нажатия "Отмена" (возвращает null)
       if (input === null) {
@@ -46,7 +48,15 @@ const startGame = () => {
         askGuess(); // Рекурсия
       } else {
         // Угадал
-        alert("Поздравляю, Вы угадали!!!");
+        const playAgain = confirm(
+          "Поздравляю, Вы угадали!!! Хотели бы сыграть еще?",
+        );
+        if (playAgain) {
+          location.reload(); // Перезагрузка страницы для полного сброса состояния
+        } else {
+          alert("Спасибо за игру!");
+        }
+        return;
       }
     }
 
