@@ -63,5 +63,6 @@ const startGame = () => {
     return askGuess;
   };
   // Запуск игры
-  createGame();
+  const game = createGame();
+  game();
 };
