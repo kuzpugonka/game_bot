@@ -36,7 +36,6 @@ const startGame = () => {
 
       const guess = Number(input);
       console.log("guess: ", guess);
-      console.log("guess: ", typeof guess);
 
       if (isNaN(guess)) {
         // Проверка: ввел ли пользователь именно число
@@ -62,6 +61,7 @@ const startGame = () => {
         );
         if (playAgain) {
           location.reload(); // Перезагрузка страницы для полного сброса состояния
+          game();
         } else {
           alert("Спасибо за игру!");
         }
